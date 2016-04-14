@@ -20,10 +20,11 @@ namespace GiveMeDiscount.bill
         public double Checkout(User user)
         {
             List<StockItem> items = new List<StockItem>(PurchasedItems);
+
             //Add up Non Groceries
             double totalNonGroceries = items.Where(x => x.GetType() != typeof(GroceryItem)).Sum(x => x.Price);
             //Apply % discount to Non Groceries
-            totalNonGroceries *= (100 - user.getDiscountPercentage()) / 100;
+            totalNonGroceries *= (100 - user.GetDiscountPercentage()) / 100;
             
             //Add up Groceries
             double totalGroceries = items.Where(x => x.GetType() == typeof(GroceryItem)).Sum(x => x.Price);
@@ -36,8 +37,11 @@ namespace GiveMeDiscount.bill
 
         private double ApplyFixedDiscounts(double currentTotal)
         {
+            //Figure out how many 100s in the amount by casting to int.
             int numberOfHundreds = (int) currentTotal / 100;
+            //Apply Fixed Discount
             double newTotal = currentTotal - (numberOfHundreds * DOLLAR_DISCOUNT_PER_HUNDRED);
+
             return newTotal;
         }
     }

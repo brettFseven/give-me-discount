@@ -19,10 +19,9 @@ namespace GiveMeDiscount.user
             this.JoinDate = parsedDate;
         }
 
-        public override double getDiscountPercentage()
+        public override double GetDiscountPercentage()
         {
             DateTime TwoYearsLater = JoinDate.AddYears(2);
-
             if (TwoYearsLater < DateTime.Now)
             {
                 return 5;

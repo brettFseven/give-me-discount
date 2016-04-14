@@ -1,9 +1,8 @@
-﻿
-namespace GiveMeDiscount.user
+﻿namespace GiveMeDiscount.user
 {
     public class Employee : User
     {
-        public override double getDiscountPercentage()
+        public override double GetDiscountPercentage()
         {
             return 30;
         }
