@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="bill\Bill.cs" />
+    <None Include="README.md" />
     <Compile Include="stock\GroceryItem.cs" />
     <Compile Include="stock\StockItem.cs" />
     <Compile Include="user\Affiliate.cs" />
